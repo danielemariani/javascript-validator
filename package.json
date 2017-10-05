@@ -1,0 +1,21 @@
+{
+  "name": "validation",
+  "version": "0.0.1",
+  "description": "A js library to formally validate values",
+  "main": "src",
+  "scripts": {
+    "test": "./node_modules/.bin/jest ./src --watchAll --coverage",
+    "test-travis": "./node_modules/.bin/jest ./src --coverage"
+  },
+  "author": "Daniele Mariani",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielemariani/validation"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "jest": "^19.0.2"
+  },
+  "dependencies": {}
+}
