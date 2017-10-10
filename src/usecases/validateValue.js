@@ -1,9 +1,7 @@
 
 function validateValue(aValue, aListOfValidators) {
   let validationResult = {
-    value: aValue,
-    isValid: true,
-    failingValidator: null
+    isValid: true
   };
 
   aListOfValidators.every(aValidator => {

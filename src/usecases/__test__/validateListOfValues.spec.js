@@ -29,14 +29,10 @@ describe('validateListOfValues', () => {
           isValid: true,
           elementsValidations: [
             {
-              value: 12,
-              isValid: true,
-              failingValidator: null
+              isValid: true
             },
             {
-              value: 10,
-              isValid: true,
-              failingValidator: null
+              isValid: true
             }
           ]
         });
@@ -76,12 +72,10 @@ describe('validateListOfValues', () => {
           isValid: false,
           elementsValidations: [
             {
-              value: 12,
               isValid: false,
               failingValidator: 'ruleA'
             },
             {
-              value: 10,
               isValid: false,
               failingValidator: 'ruleA'
             }

@@ -33,14 +33,10 @@ describe('validateMapOfValues', () => {
           isValid: true,
           propsValidations: {
             a: {
-              value: 12,
-              isValid: true,
-              failingValidator: null
+              isValid: true
             },
             b: {
-              value: 10,
-              isValid: true,
-              failingValidator: null
+              isValid: true
             }
           }
         });
@@ -85,12 +81,10 @@ describe('validateMapOfValues', () => {
           isValid: false,
           propsValidations: {
             a: {
-              value: 12,
               isValid: false,
               failingValidator: 'ruleA'
             },
             b: {
-              value: 10,
               isValid: false,
               failingValidator: 'ruleA'
             }

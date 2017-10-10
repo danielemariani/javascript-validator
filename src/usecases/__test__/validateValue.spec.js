@@ -26,9 +26,7 @@ describe('validateValue', () => {
         );
 
         expect(validationResult).toEqual({
-          value: 12,
-          isValid: true,
-          failingValidator: null
+          isValid: true
         });
       });
 
@@ -57,7 +55,6 @@ describe('validateValue', () => {
         );
 
         expect(validationResult).toEqual({
-          value: 12,
           isValid: false,
           failingValidator: 'ruleA'
         });
