@@ -1,8 +1,18 @@
 
+const isDefined = require('../rules/isDefined');
 const validateValue = require('./validateValue');
 const adaptRuleToValidator = require('../adapters/adaptRuleToValidator');
 
 function applyValidationDescriptorToValue(aValue, aValidationDescriptor) {
+  if (
+    isDefined(aValidationDescriptor.isRequired) &&
+    !(aValidationDescriptor.isRequired)
+  ) {
+    if (!isDefined(aValue)) {
+      return mergeValidationResults();
+    }
+  }
+
   return mergeValidationResults(
     applyRulesToValue(aValue, aValidationDescriptor),
     applyElementsRulesToValue(aValue, aValidationDescriptor),

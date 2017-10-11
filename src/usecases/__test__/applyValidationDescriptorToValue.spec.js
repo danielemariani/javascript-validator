@@ -221,6 +221,51 @@ describe('applyValidationDescriptorToValue', () => {
           });
       });
     });
+
+    describe('and the descriptor says that a value is not "required"', () => {
+      describe('and a "undefined" value is provided', () => {
+        it('should not apply the validation rules and say that the value is valid', () => {
+          let result = applyValidationDescriptorToValue({ a: undefined }, {
+            props: {
+              a: {
+                isRequired: false,
+                rules: ['isNumber']
+              }
+            }
+          });
+
+          expect(result).toEqual({
+            isValid: true,
+            props: {
+              a: { isValid: true }
+            }
+          });
+        });
+      });
+
+      describe('and a "defined" value is provided', () => {
+        it('should apply the validation rules', () => {
+          let result = applyValidationDescriptorToValue({ a: '12' }, {
+            props: {
+              a: {
+                isRequired: false,
+                rules: ['isNumber']
+              }
+            }
+          });
+
+          expect(result).toEqual({
+            isValid: false,
+            props: {
+              a: {
+                isValid: false,
+                failingValidator: 'isNumber'
+              }
+            }
+          });
+        });
+      });
+    });
   });
 });
 
