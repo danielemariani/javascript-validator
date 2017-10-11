@@ -19,12 +19,14 @@ describe('Validate controller', () => {
       describe('and a list of values is provided as the value to validate', () => {
         it('should validate each element in the list of values applying the rules', () => {
           let result = validate([12, 13], {
-            elementsRules: ['isNumber']
+            elements: {
+              rules: ['isNumber']
+            }
           });
 
           expect(result).toEqual({
             isValid: true,
-            elementsValidations: [
+            elements: [
               { isValid: true },
               { isValid: true }
             ]
@@ -37,12 +39,15 @@ describe('Validate controller', () => {
       describe('and a map of values is provided as the value to validate', () => {
         it('should validate the map of values applying the rules', () => {
           let result = validate({ a: 12, b: 13 }, {
-            propsRules: { a: ['isNumber'], b: ['isNumber'] }
+            props: {
+              a: { rules: ['isNumber'] },
+              b: { rules: ['isNumber'] }
+            }
           });
 
           expect(result).toEqual({
             isValid: true,
-            propsValidations: {
+            props: {
               a: { isValid: true },
               b: { isValid: true }
             }
@@ -52,34 +57,27 @@ describe('Validate controller', () => {
     });
   });
 
-  describe('when the descriptor contains both rules and elements rules', () => {
-    describe('and the "rules" validation fails', () => {
-      it('should fail the validation without applying the elements validation', () => {
-        let result = validate(12, {
-          rules: ['isArray'],
-          elementsRules: ['isString']
-        });
-
-        expect(result).toEqual({
-          isValid: false,
-          failingValidator: 'isArray'
-        });
+  describe('when the descriptor combines different validations for avalue', () => {
+    it('should correctly apply the validations', () => {
+      let result = validate({ a: 12, b: [1, 2] }, {
+        props: {
+          a: { rules: ['isNumber'] },
+          b: { elements: { rules: ['isNumber'] }}
+        }
       });
-    });
-  });
 
-  describe('when the descriptor contains both rules and props rules', () => {
-    describe('and the "rules" validation fails', () => {
-      it('should fail the validation without applying the props validation', () => {
-        let result = validate(12, {
-          rules: ['isArray'],
-          propsRules: { a: ['isString'] }
-        });
-
-        expect(result).toEqual({
-          isValid: false,
-          failingValidator: 'isArray'
-        });
+      expect(result).toEqual({
+        isValid: true,
+        props: {
+          a: { isValid: true },
+          b: {
+            isValid: true,
+            elements: [
+              { isValid: true },
+              { isValid: true }
+            ]
+          }
+        }
       });
     });
   });

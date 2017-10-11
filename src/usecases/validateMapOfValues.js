@@ -1,5 +1,6 @@
 
 const validateValue = require('./validateValue');
+const validateListOfValue = require('./validateListOfValues');
 
 function validateMapOfValues(aMapOfValues, aMapOfValidators) {
   let validationResult = {
