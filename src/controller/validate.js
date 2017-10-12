@@ -1,5 +1,4 @@
 
-const rules = require('../rules/');
 const applyValidationDescriptorToValue = require('../usecases/applyValidationDescriptorToValue');
 
 function validate(aValue, aValidationDescriptor) {
