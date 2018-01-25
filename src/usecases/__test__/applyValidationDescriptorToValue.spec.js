@@ -154,6 +154,22 @@ describe('applyValidationDescriptorToValue', () => {
           });
       });
 
+      describe('should apply the "rules" first, if present', () => {
+        describe('and if the rules validation fails', () => {
+          it('should not apply elements or props validation', () => {
+            let result = applyValidationDescriptorToValue(
+              {},
+              { rules: ['isArray'], elements: { rules: ['isNumber'] } }
+            );
+
+            expect(result).toEqual({
+              isValid: false,
+              failingValidator: 'isArray'
+            });
+          });
+        });
+      });
+
       it('should NOT be valid if expected and expose the validation errors', () => {
         let result = applyValidationDescriptorToValue({
           a: 12,

@@ -13,6 +13,15 @@ function applyValidationDescriptorToValue(aValue, aValidationDescriptor) {
     }
   }
 
+  let valueValidation = applyRulesToValue(
+    aValue,
+    aValidationDescriptor
+  );
+
+  if (valueValidation && !valueValidation.isValid) {
+    return mergeValidationResults(valueValidation);
+  }
+
   return mergeValidationResults(
     applyRulesToValue(aValue, aValidationDescriptor),
     applyElementsRulesToValue(aValue, aValidationDescriptor),
