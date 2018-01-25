@@ -6,6 +6,7 @@ describe('isValidUsername', () => {
     it('if the provided value is a valid username', () => {
       expect(isValidUsername('alkjasidj')).toBe(true);
       expect(isValidUsername('a_2AsaskOÌ')).toBe(true);
+      expect(isValidUsername('a_2As.askOÌ')).toBe(true);
     });
 
   });
