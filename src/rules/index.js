@@ -3,6 +3,7 @@ const isArray = require('./isArray');
 const isNumber = require('./isNumber');
 const isString = require('./isString');
 const isBoolean = require('./isBoolean');
+const isTrue = require('./isTrue');
 const isDefined = require('./isDefined');
 const hasMaxLength = require('./hasMaxLength');
 const isNonEmptyString = require('./isNonEmptyString');
@@ -22,6 +23,7 @@ module.exports = {
   isString,
   isBoolean,
   isDefined,
+  isTrue,
   hasMaxLength,
   hasMinLength,
   isNonEmptyString,
