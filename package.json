@@ -1,6 +1,6 @@
 {
   "name": "javascript-formal-validator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A js library to formally validate values",
   "main": "src",
   "scripts": {
