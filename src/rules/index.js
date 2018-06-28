@@ -16,6 +16,9 @@ const isValidPassword = require('./isValidPassword');
 const isValidPersonName = require('./isValidPersonName');
 const isValidUrl = require('./isValidUrl');
 const isValidUsername = require('./isValidUsername');
+const notContainsAnyEmail = require('./notContainsAnyEmail');
+const notContainsAnyWebAddress = require('./notContainsAnyWebAddress');
+const notContainsAnyPhoneNumber = require('./notContainsAnyPhoneNumber');
 
 module.exports = {
   isArray,
@@ -33,6 +36,8 @@ module.exports = {
   isValidEmail,
   isValidPassword,
   isValidUsername,
-  isValidPersonName
+  isValidPersonName,
+  notContainsAnyEmail,
+  notContainsAnyPhoneNumber,
+  notContainsAnyWebAddress
 };
-
