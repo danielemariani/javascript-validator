@@ -17,4 +17,3 @@ function isStringOrArray(aValue) {
 }
 
 module.exports = hasMaxLength;
-
