@@ -19,6 +19,7 @@ const isValidUsername = require('./isValidUsername');
 const notContainsAnyEmail = require('./notContainsAnyEmail');
 const notContainsAnyWebAddress = require('./notContainsAnyWebAddress');
 const notContainsAnyPhoneNumber = require('./notContainsAnyPhoneNumber');
+const isAgeMoreThan = require('./isAgeMoreThan');
 
 module.exports = {
   isArray,
@@ -39,5 +40,6 @@ module.exports = {
   isValidPersonName,
   notContainsAnyEmail,
   notContainsAnyPhoneNumber,
-  notContainsAnyWebAddress
+  notContainsAnyWebAddress,
+  isAgeMoreThan
 };
