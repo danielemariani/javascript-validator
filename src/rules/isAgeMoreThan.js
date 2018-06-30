@@ -4,7 +4,7 @@ const isValidDate = require('./isValidDate');
 function isAgeMoreThan(aMinAge, aValue) {
   return (
     isValidDate(aValue)
-    && calculateAge(aValue, new Date()) >= aMinAge
+    && calculateAge(new Date(aValue), new Date()) >= aMinAge
   );
 }
 
