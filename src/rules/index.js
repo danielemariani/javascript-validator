@@ -7,7 +7,6 @@ const isTrue = require('./isTrue');
 const isDefined = require('./isDefined');
 const hasMaxLength = require('./hasMaxLength');
 const isNonEmptyString = require('./isNonEmptyString');
-
 const hasMinLength = require('./hasMinLength');
 const isEqualToValue = require('./isEqualToValue');
 const isValidDate = require('./isValidDate');
@@ -20,6 +19,7 @@ const notContainsAnyEmail = require('./notContainsAnyEmail');
 const notContainsAnyWebAddress = require('./notContainsAnyWebAddress');
 const notContainsAnyPhoneNumber = require('./notContainsAnyPhoneNumber');
 const isAgeMoreThan = require('./isAgeMoreThan');
+const matches = require('./matches');
 
 module.exports = {
   isArray,
@@ -41,5 +41,6 @@ module.exports = {
   notContainsAnyEmail,
   notContainsAnyPhoneNumber,
   notContainsAnyWebAddress,
-  isAgeMoreThan
+  isAgeMoreThan,
+  matches
 };
