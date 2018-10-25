@@ -19,6 +19,8 @@ const notContainsAnyEmail = require('./notContainsAnyEmail');
 const notContainsAnyWebAddress = require('./notContainsAnyWebAddress');
 const notContainsAnyPhoneNumber = require('./notContainsAnyPhoneNumber');
 const isAgeMoreThan = require('./isAgeMoreThan');
+const isMoreThan = require('./isMoreThan');
+const isLessThan = require('./isLessThan');
 const matches = require('./matches');
 
 module.exports = {
@@ -42,5 +44,7 @@ module.exports = {
   notContainsAnyPhoneNumber,
   notContainsAnyWebAddress,
   isAgeMoreThan,
+  isMoreThan,
+  isLessThan,
   matches
 };
